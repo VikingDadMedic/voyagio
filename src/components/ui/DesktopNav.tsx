@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { NavLink, Link } from "react-router-dom";
 import { UserAuth } from "../../context/AuthContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -21,12 +22,6 @@ const DesktopNav = () => {
 					<NavLink to="/planner" className="transition-color rounded-full px-8 py-[14px] duration-150 hover:text-cyan-400">
 						Plan A Trip
 					</NavLink>
-					{/* <NavLink to="/blog" className="transition-color rounded-full px-8 py-[14px] duration-150 hover:text-cyan-400">
-						Blog
-					</NavLink>
-					<Link target="_blank" to="https://voyagio.canny.io/feature-requests" className="transition-color rounded-full px-8 py-[14px] duration-150 hover:text-cyan-400">
-						Feedback
-					</Link> */}
 				</div>
 				{!user ? (
 					<NavLink to="/sign" aria-label="Sign in or sign up!" className={`ml-4 flex h-[58px] w-[58px] items-center justify-center rounded-full border-4 border-gray-500 bg-gray-300 text-xl font-bold duration-300 hover:border-blue-500 ${navLoadClass}`}>

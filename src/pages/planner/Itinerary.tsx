@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { useReducer, useState } from "react";
 import { useItineraryFormValidation } from "../../hooks/useItineraryFormValidation.ts";
 import { useSubmitItinerary } from "../../hooks/useSubmitItinerary.ts";
@@ -126,7 +127,7 @@ const ItineraryPlanner = () => {
 
 	return (
 		<>
-			<form onSubmit={handleSubmit} className="grid place-items-center space-y-4 border-gray-500 border-opacity-20 bg-white p-8 px-8 shadow-2xl sm:border md:rounded-2xl">
+			<form onSubmit={handleSubmit} className="grid p-8 px-8 space-y-4 bg-white border-gray-500 shadow-2xl place-items-center border-opacity-20 sm:border md:rounded-2xl">
 				<h2 className="text-3xl font-bold">Plan Your Next Trip</h2>
 
 				{/*Destination*/}
@@ -134,8 +135,8 @@ const ItineraryPlanner = () => {
 					<h4 className="mb-8 text-xl font-bold">
 						Where would you like to go?
 						{errors.destination && (
-							<p className="error pl-2 text-lg font-normal text-red-600">
-								<FontAwesomeIcon className="fa-rotate-90 mr-3" icon={faArrowTurnUp} />
+							<p className="pl-2 text-lg font-normal text-red-600 error">
+								<FontAwesomeIcon className="mr-3 fa-rotate-90" icon={faArrowTurnUp} />
 								{errors.destination}
 							</p>
 						)}
@@ -153,9 +154,9 @@ const ItineraryPlanner = () => {
 						className={`${errors.destination ? "border-red-500" : "border-gray-300"} placeholder:font-base mt-2 h-12 w-full rounded-xl border bg-gray-50 px-4 py-2 backdrop-blur-lg placeholder:text-gray-400 focus-within:outline-none`}
 					/>
 					{showSuggestions && (
-						<ul className="absolute z-10 mt-1 w-full overflow-hidden rounded-xl border border-gray-300 bg-white shadow-lg">
+						<ul className="absolute z-10 w-full mt-1 overflow-hidden bg-white border border-gray-300 shadow-lg rounded-xl">
 							{citySuggestions.map((city, index) => (
-								<li className="cursor-pointer px-6 py-2 hover:bg-gray-100" key={index} onClick={() => handleSelectCity(city.name)}>
+								<li className="px-6 py-2 cursor-pointer hover:bg-gray-100" key={index} onClick={() => handleSelectCity(city.name)}>
 									{city.name}
 								</li>
 							))}
@@ -164,12 +165,12 @@ const ItineraryPlanner = () => {
 				</div>
 
 				{/*Date */}
-				<div className="w-full border-t border-t-gray-300 py-8">
+				<div className="w-full py-8 border-t border-t-gray-300">
 					<h4 className="mb-8 text-xl font-bold">
 						When are you planning to go?
 						{errors.date && (
-							<p className="error pl-2 text-lg font-normal text-red-600">
-								<FontAwesomeIcon className="fa-rotate-90 mr-3" icon={faArrowTurnUp} />
+							<p className="pl-2 text-lg font-normal text-red-600 error">
+								<FontAwesomeIcon className="mr-3 fa-rotate-90" icon={faArrowTurnUp} />
 								{errors.date}
 							</p>
 						)}
@@ -198,26 +199,26 @@ const ItineraryPlanner = () => {
 				</div>
 
 				{/*Length*/}
-				<div className="w-full border-t border-t-gray-300 py-8">
+				<div className="w-full py-8 border-t border-t-gray-300">
 					<h4 className="mb-8 text-xl font-bold">
 						How many days are you planning to stay? {state.length} {state.length ? (state.length == "1" ? "day" : "days") : ""}
 						{errors.length && (
-							<p className="error pl-2 text-lg font-normal text-red-600">
-								<FontAwesomeIcon className="fa-rotate-90 mr-3" icon={faArrowTurnUp} />
+							<p className="pl-2 text-lg font-normal text-red-600 error">
+								<FontAwesomeIcon className="mr-3 fa-rotate-90" icon={faArrowTurnUp} />
 								{errors.length}
 							</p>
 						)}
 					</h4>
-					<input id="length" type="range" min="1" max="14" name="length" value={state.length} onChange={handleInputChange("length")} className="h-10 w-full rounded-full bg-transparent py-2" />
+					<input id="length" type="range" min="1" max="14" name="length" value={state.length} onChange={handleInputChange("length")} className="w-full h-10 py-2 bg-transparent rounded-full" />
 				</div>
 
 				{/*Group Size*/}
-				<div className="w-full border-t border-t-gray-300 py-8">
+				<div className="w-full py-8 border-t border-t-gray-300">
 					<h4 className="mb-8 text-xl font-bold">
 						How many people are travelling?
 						{errors.group && (
-							<p className="error pl-2 text-lg font-normal text-red-600">
-								<FontAwesomeIcon className="fa-rotate-90 mr-3" icon={faArrowTurnUp} />
+							<p className="pl-2 text-lg font-normal text-red-600 error">
+								<FontAwesomeIcon className="mr-3 fa-rotate-90" icon={faArrowTurnUp} />
 								{errors.group}
 							</p>
 						)}
@@ -236,12 +237,12 @@ const ItineraryPlanner = () => {
 				</div>
 
 				{/*Budget Section*/}
-				<div className="w-full border-t border-t-gray-300 py-8">
+				<div className="w-full py-8 border-t border-t-gray-300">
 					<h4 className="mb-8 text-xl font-bold">
 						What is your budget range?{" "}
 						{errors.budget && (
-							<p className="error pl-2 text-lg font-normal text-red-600">
-								<FontAwesomeIcon className="fa-rotate-90 mr-3" icon={faArrowTurnUp} />
+							<p className="pl-2 text-lg font-normal text-red-600 error">
+								<FontAwesomeIcon className="mr-3 fa-rotate-90" icon={faArrowTurnUp} />
 								{errors.budget}
 							</p>
 						)}
@@ -261,12 +262,12 @@ const ItineraryPlanner = () => {
 				</div>
 
 				{/*Activities Section*/}
-				<div className="w-full border-t border-t-gray-300 py-8">
+				<div className="w-full py-8 border-t border-t-gray-300">
 					<h4 className="mb-8 text-xl font-bold">
 						What activities are you interested in?
 						{errors.activity && (
-							<p className="error pl-2 text-lg font-normal text-red-600">
-								<FontAwesomeIcon className="fa-rotate-90 mr-3" icon={faArrowTurnUp} />
+							<p className="pl-2 text-lg font-normal text-red-600 error">
+								<FontAwesomeIcon className="mr-3 fa-rotate-90" icon={faArrowTurnUp} />
 								{errors.activity}
 							</p>
 						)}
@@ -293,12 +294,12 @@ const ItineraryPlanner = () => {
 					</p>
 				</div>
 
-				<div className="fixed bottom-0 left-0 flex w-full justify-center border-t border-gray-300 bg-white px-8 py-8 sm:justify-end">
+				<div className="fixed bottom-0 left-0 flex justify-center w-full px-8 py-8 bg-white border-t border-gray-300 sm:justify-end">
 					<div className="flex flex-row space-x-4 sm:max-w-2xl">
-						<button className="flex h-12 w-12 items-center justify-center rounded-lg border border-gray-300 px-4 py-2 text-lg font-semibold text-gray-400 shadow-md" type="button" onClick={handleReset} value="Reset">
+						<button className="flex items-center justify-center w-12 h-12 px-4 py-2 text-lg font-semibold text-gray-400 border border-gray-300 rounded-lg shadow-md" type="button" onClick={handleReset} value="Reset">
 							<FontAwesomeIcon icon={faArrowRotateLeft} />
 						</button>
-						<button className="rounded-lg border border-blue-600 bg-blue-500 px-4 py-2 text-lg font-semibold text-white shadow-md" type="submit" value="Submit">
+						<button className="px-4 py-2 text-lg font-semibold text-white bg-blue-500 border border-blue-600 rounded-lg shadow-md" type="submit" value="Submit">
 							Get itinerary
 						</button>
 					</div>

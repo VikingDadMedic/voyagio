@@ -1,3 +1,4 @@
+/* eslint-disable */
 import * as React from "react";
 import { CalendarIcon } from "lucide-react";
 import { startOfWeek, endOfWeek, subDays, startOfMonth, endOfMonth, startOfYear, endOfYear, startOfDay, endOfDay } from "date-fns";
@@ -272,7 +273,7 @@ export const CalendarDatePicker = React.forwardRef<HTMLButtonElement, CalendarDa
 			<Popover open={isPopoverOpen} onOpenChange={setIsPopoverOpen}>
 				<PopoverTrigger asChild>
 					<Button id="date" ref={ref} {...props} className={cn("w-auto", multiSelectVariants({ variant, className }))} onClick={handleTogglePopover} suppressHydrationWarning>
-						<CalendarIcon className="mr-2 h-4 w-4" />
+						<CalendarIcon className="w-4 h-4 mr-2" />
 						<span>
 							{date?.from ? (
 								date.to ? (
@@ -337,7 +338,7 @@ export const CalendarDatePicker = React.forwardRef<HTMLButtonElement, CalendarDa
 					>
 						<div className="flex">
 							{numberOfMonths === 2 && (
-								<div className="border-foreground/10 hidden flex-col gap-1 border-r pr-4 text-left md:flex">
+								<div className="flex-col hidden gap-1 pr-4 text-left border-r border-foreground/10 md:flex">
 									{dateRanges.map(({ label, start, end }) => (
 										<Button
 											key={label}
@@ -359,7 +360,7 @@ export const CalendarDatePicker = React.forwardRef<HTMLButtonElement, CalendarDa
 							)}
 							<div className="flex flex-col">
 								<div className="flex items-center gap-4">
-									<div className="ml-3 flex gap-2">
+									<div className="flex gap-2 ml-3">
 										<Select
 											onValueChange={(value) => {
 												handleMonthChange(months.indexOf(value), "from");

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faClockRotateLeft, faCircleInfo, faBug, faMoneyBillWave } from "@fortawesome/free-solid-svg-icons";
+import { faClockRotateLeft } from "@fortawesome/free-solid-svg-icons";
 import { UserAuth } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import History from "./account/History";
@@ -16,21 +16,7 @@ const links: Link[] = [
 		state: "history",
 		icon: <FontAwesomeIcon icon={faClockRotateLeft} />,
 	},
-	// {
-	// 	title: "Plans",
-	// 	state: "subscription",
-	// 	icon: <FontAwesomeIcon icon={faMoneyBillWave} />,
-	// },
-	// {
-	// 	title: "Bugs",
-	// 	state: "bug",
-	// 	icon: <FontAwesomeIcon icon={faBug} />,
-	// },
-	// {
-	// 	title: "Help",
-	// 	state: "help",
-	// 	icon: <FontAwesomeIcon icon={faCircleInfo} />,
-	// },
+
 ];
 
 const Account: React.FC = () => {

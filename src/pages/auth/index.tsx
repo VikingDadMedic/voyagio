@@ -16,21 +16,21 @@ const links: Link[] = [
 		state: "history",
 		icon: <FontAwesomeIcon icon={faClockRotateLeft} />,
 	},
-	{
-		title: "Plans",
-		state: "subscription",
-		icon: <FontAwesomeIcon icon={faMoneyBillWave} />,
-	},
-	{
-		title: "Bugs",
-		state: "bug",
-		icon: <FontAwesomeIcon icon={faBug} />,
-	},
-	{
-		title: "Help",
-		state: "help",
-		icon: <FontAwesomeIcon icon={faCircleInfo} />,
-	},
+	// {
+	// 	title: "Plans",
+	// 	state: "subscription",
+	// 	icon: <FontAwesomeIcon icon={faMoneyBillWave} />,
+	// },
+	// {
+	// 	title: "Bugs",
+	// 	state: "bug",
+	// 	icon: <FontAwesomeIcon icon={faBug} />,
+	// },
+	// {
+	// 	title: "Help",
+	// 	state: "help",
+	// 	icon: <FontAwesomeIcon icon={faCircleInfo} />,
+	// },
 ];
 
 const Account: React.FC = () => {
@@ -71,9 +71,9 @@ const Account: React.FC = () => {
 	};
 
 	return (
-		<div className="min-h-screen gap-4 px-6 pb-20 pt-40 sm:grid sm:grid-cols-4">
+		<div className="min-h-screen gap-4 px-6 pt-40 pb-20 sm:grid sm:grid-cols-4">
 			<Sidebar links={links} setAccountSection={setAccountSection} user={user} logout={handleLogout} />
-			<div className="rounded-3xl pt-8 sm:col-span-3 sm:p-6">{renderSection()}</div>
+			<div className="pt-8 rounded-3xl sm:col-span-3 sm:p-6">{renderSection()}</div>
 		</div>
 	);
 };

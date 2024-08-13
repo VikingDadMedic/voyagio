@@ -42,17 +42,17 @@ const About: React.FC = () => {
 	];
 
 	return (
-		<div style={{ backgroundImage: "linear-gradient(to top, rgba(0,0,0,0.1), rgba(245,245,245,0.5),rgba(0,0,0,0)), url('https://img.freepik.com/premium-vector/vector-white-abstract-futuristic-background-with-perspective-infinity-grid-tile-floor-texture_547648-3196.jpg')" }} className="w-full bg-cover bg-center px-6 pb-40 pt-16">
-			<h2 className="mx-auto mb-6 max-w-6xl text-5xl font-extrabold text-gray-800 sm:mb-16 ">How to Use Voyagio</h2>
-			<div className="mx-auto max-w-6xl gap-8">
+		<div style={{ backgroundImage: "linear-gradient(to top, rgba(0,0,0,0.1), rgba(245,245,245,0.5),rgba(0,0,0,0)), url('https://img.freepik.com/premium-vector/vector-white-abstract-futuristic-background-with-perspective-infinity-grid-tile-floor-texture_547648-3196.jpg')" }} className="w-full px-6 pt-16 pb-40 bg-center bg-cover">
+			<h2 className="max-w-6xl mx-auto mb-6 text-5xl font-extrabold text-blue-800 sm:mb-16 ">How to Use "le travel itinerary"</h2>
+			<div className="max-w-6xl gap-8 mx-auto">
 				{about.map((item, id) => (
-					<div key={id} className="mb-8 flex flex-col justify-between gap-8 lg:flex-row">
-						<div className="flex w-full items-center justify-center">
+					<div key={id} className="flex flex-col justify-between gap-8 mb-8 lg:flex-row">
+						<div className="flex items-center justify-center w-full">
 							<img className="aspect-square max-h-80" src={item.src} alt={item.alt} />
 						</div>
-						<div className="mx-auto max-w-xl rounded-3xl  bg-white px-8 py-10 shadow-lg backdrop-blur-xl">
+						<div className="max-w-xl px-8 py-10 mx-auto bg-white shadow-lg rounded-3xl backdrop-blur-xl">
 							<h3 className="mb-4 text-2xl font-bold text-gray-800 sm:text-3xl">{item.title}</h3>
-							<p className="mb-8 text-justify text-base font-medium leading-7 text-gray-400 sm:text-lg">{item.par}</p>
+							<p className="mb-8 text-base font-medium leading-7 text-justify text-gray-400 sm:text-lg">{item.par}</p>
 							<button onClick={handleNaviagtion} className={`${item.bg} w-full rounded-xl px-6 py-4 text-center text-xl font-bold text-white shadow-md transition-transform duration-150 hover:scale-[1.02]`}>
 								{item.cta}
 							</button>
